@@ -1,0 +1,31 @@
+
+<view class="bg">
+  <view class="focusAll">
+    <view class="interest">
+      <view class="first">
+        <text>你可能感兴趣的人</text>
+        <text class="lookmore">查看更多  ></text>
+      </view>
+      <view class='childer' wx:for='{{focusman}}' wx:for-item='item'>
+        <image src='{{item.logsrc}}'  mode="aspectFill"></image>
+        <text>{{item.name}}</text> 
+        <text class="userintro">{{item.detail}}</text>
+        <!-- <text>{{item.name}} \n{{item.detail}}</text> -->
+        <text class='focuss' data-item='{{item}}'>关注</text>
+      </view>
+    </view>
+    <view class="attention">
+       <view class="second">
+        <text>我关注的人</text>
+      </view>
+       <view class='childer' wx:for='{{focusman}}' wx:for-item='item'>
+        <image src='{{item.logsrc}}'  mode="aspectFill"></image>
+        <text>{{item.name}}</text> 
+        <text class="userintro">{{item.detail}}</text>
+        <!-- <text>{{item.name}} \n{{item.detail}}</text> -->
+        <text class='focussed'  data-item='{{item}}'>已关注</text>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,14 @@
+<view class="bg">
+  <view class="focusAll">
+    <view class='childer' wx:for='{{focusman}}' wx:for-item='item'>
+      <view>
+        <image src='{{item.img}}'></image>
+        <text bindtap='select' data-index="{{index}}">{{item.nickname}}</text>
+      </view>
+      <text wx:if="{{ item.state }}" class='check'>√</text>
+    </view>
+  </view>
+</view>
+<view class='confirm' bindtap='confirm'>
+  确定
+</view>

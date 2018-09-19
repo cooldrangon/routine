@@ -1,0 +1,12 @@
+
+@import "../../../components/private/private.wxss";
+.bg{
+  background-color: #eeeeee;
+  padding-top:20rpx;
+}
+.focusAll{
+  background-color: #fff;
+  padding:50rpx 35rpx 0 35rpx;
+  font-size: 30rpx;
+  height:1200rpx;
+}

@@ -1,0 +1,72 @@
+<view class='pencliimg'>
+  <image src="{{pencilimg}}"></image>
+</view>
+<view class='container'>
+  <view class='header'>
+    <text class='header-small' bindtap='cancel'>取消</text>
+    <text class='header-moddle'>发布笔记</text>
+    <text class='header-small'></text>
+  </view>
+  <view class='header-title header-small'>
+    <text>为你的笔记添加一个标题</text>
+  </view>
+  <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+    <text class='label' wx:for='{{6}}' wx:for-index="index" wx:for-item="item" style='{{key==index?"background-color:#ffc64a;color:white;":""}} z-index:999;' bindtap='changColor' data-index='{{index}}'>{{item}}</text>
+  </scroll-view>
+  <view class='content'>
+    <textarea placeholder-class="place-holder" class="textarea-text" name="username" placeholder='请输入你想记录的内容' bindinput='settextarea' value='{{endtime}}' maxlength='-1'></textarea>
+  </view>
+  <view class="camera-content">
+    <view wx:if="{{xytemp}}" class='moneypicgure'>
+      <view wx:for='{{temp}}' wx:for-item="item">
+        <image src='{{item}}'></image>
+      </view>
+    </view>
+    <view class='camera' bindtap='actioncnt'>
+      <image src="{{tempFilepath}}">
+
+      </image>
+    </view>
+  </view>
+  <view class='icon-text'>
+    <view>
+      <image src='../../../assets/tabs/place.png'></image>
+      <text bindtap='addsite'>{{addsite}}</text>
+    </view>
+    <view>
+      <image src='../../../assets/tabs/@@3x.png'></image>
+      <text bindtap='firend'>@我的好友</text>
+      <image src='../../../assets/tabs/renwu.png'></image>
+      <text bindtap='seenotes'>谁可以看我的笔记</text>
+    </view>
+    <view>
+      <image src='../../../assets/tabs/weixin.png'></image>
+      <text>微信</text>
+      <image src='../../../assets/tabs/firend.png'></image>
+      <text>朋友圈</text>
+    </view>
+  </view>
+  <view class='release-content'>
+    <view class='release' bindtap='publish'>
+      <text>发布</text>
+    </view>
+  </view>
+</view>
+
+<!-- 弹出框 -->
+<view class='seenotes' style='{{seenotes?"z-index:5;display:block;":""}}'>
+  <view class='seenotes-header'>请选择可以观看笔记的人</view>
+  <view class='noterecord' wx:for="{{noterecord}}" wx:for-index="index">
+    <text style='{{choicefriend==index?"color:#ffc64a;":""}} z-index:999;' bindtap='changchoice' data-index='{{index}}'>{{item}}</text>
+  </view>
+  <view class='seenotes-footer'>
+    <text bindtap="confirm">确定</text>
+    <text bindtap="cancelseenotes">取消</text>
+  </view>
+</view>
+<!-- 遮罩层 -->
+<view class='full-screen' style='{{seenotes?"z-index:3;display:block;":""}}'></view>
+<!-- 点击发布显示的弹出窗口 -->
+<view class='{{sendFlag?"active":"cancel"}} prompt-wicket'>
+  请为你的笔记选择标签
+</view>

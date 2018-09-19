@@ -1,0 +1,15 @@
+<view class="likeCollect">
+  <view class="likeContent">
+    <view class="one" wx:for='{{focusman}}'>
+      <image src="{{item.logsrc}}" class="head" mode="aspectFill"></image>
+      <text class="cc">
+        <text class="ctop">xx回复了你的笔记\n</text>
+        <text class="cbottom">time\n</text>
+
+        <text class="ctop">xx回复了你的评论\n</text>
+        <text class="cbottom">time\n</text>    
+      </text>
+      <image src="{{item.logsrc}}" class="pic" mode="aspectFill"></image>
+    </view>
+  </view>
+</view>

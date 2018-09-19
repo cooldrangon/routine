@@ -1,0 +1,13 @@
+<view class='search'>
+  <icon type='search' class='searchlog'></icon>
+  <input value="{{searchValue}}" bindconfirm='oks' bindinput='watchPassWord' bindtap="wxSearchTab" placeholder='请输入你要搜索的账号' placeholder-class="place-holder" />
+</view>
+<view wx:for="{{search}}" class='searchcontacts'>
+ <view class='userimg'>
+  <image src='{{item.img}}'></image>
+  <text>{{item.name}}</text>
+ </view>
+ <view class='application'>
+   {{item.log}}
+ </view>
+</view>

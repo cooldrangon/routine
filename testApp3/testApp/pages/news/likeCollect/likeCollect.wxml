@@ -1,0 +1,18 @@
+<!-- <view class="likeCollect">
+  <view class="likeContent">
+    <view class="one" wx:for='{{focusman}}'>
+      <image src="{{item.logsrc}}" class="head" mode="aspectFill"></image>
+      <text class="cc">
+        <text class="ctop">xx收藏了你的笔记</text>
+        <text class="cbottom">time</text>
+      </text>
+      <image src="{{item.logsrc}}" class="pic" mode="aspectFill"></image>
+    </view>
+  </view>
+</view> -->
+<import src="../../../components/private/private.wxml"/>
+<view class="likeCollect">
+  <view wx:for='{{focusman}}'>
+    <template is="newstemplate" data='{{...item}}' /> 
+  </view>
+</view>

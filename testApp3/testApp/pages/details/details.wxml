@@ -1,0 +1,34 @@
+<view class='personals'>
+  <!-- 读取个人信息： 头像和昵称 -->
+  <!-- <view class='logo'><image class='logoimg' src='{{imgsrc?imgsrc:"../../image/homes.png"}}'>
+  </view> -->
+  <view class="camera-content">
+    <view class='camera' bindtap='actioncnt'>
+      <image src="{{tempFilePaths}}">
+
+      </image>
+    </view>
+  </view>
+  <view class='main'>
+    <!-- <view class='nametitle'> 这里是获取的名字</view>
+    <view class='name'><input type='text' value='{{name}}'></input></view> -->
+    <view class='desigansition'>
+      <text>名称 :</text><input/>
+    </view>
+    <view class='sex'>
+      性别：
+      <text class='label' wx:for='{{2}}' wx:for-index="index" wx:for-item="item" style='{{key==index?"background-color:#ffc64a;color:white;":""}} z-index:999;' bindtap='changColor' data-index='{{index}}'>{{item}}</text>
+    </view>
+    <view class='birthday'>
+      <text>出生年月：</text>
+      <picker mode="date" value="{{dateTime1}}" bindchange="changeDateTime1">
+        <view class="tui-picker-detail">
+          {{dateTime1}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='footers'>
+    <text bindtap='nextgo'>创建并绑定</text>
+  </view>
+</view>

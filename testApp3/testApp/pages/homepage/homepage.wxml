@@ -1,0 +1,80 @@
+
+<view class='homepage'>
+  <view class="top">
+    <view class='topnav'>
+      <view class='fouce {{1===index?"borbto":""}}' bindtap='focuss'>关注</view>
+      <view class='square {{2===index?"borbto":""}}' bindtap='squares'>广场</view>
+      <view class='activity {{3===index?"borbto":""}}' bindtap='activitys'>活动</view>
+      <view class='inform' bindtap='informs'><image src='../../assets/img/bell.png'></image></view>
+    </view>
+    <view class='search'>
+      <icon type='search' class='searchlog'></icon>
+      <input value="{{searchValue}}" bindconfirm='oks'  bindinput='watchPassWord' disabled='true' bindtap="wxSearchTab" />
+    </view>
+  </view>
+    
+    <!-- 关注 -->
+  <view wx:if='{{name==="focuse"}}'>
+        <navigator class='modufocuse childer' wx:for='{{focusman}}' wx:for-item='item'  url="../focuse/focuse">
+          <image  class="pic" src='{{item.avatarimage}}'  mode="aspectFill"></image>
+          <text class="name">{{item.nickname}}</text> 
+          <text class="time">{{item.create_time}}</text> 
+          <view class="images">
+            <image wx:for="{{item.coverimages}}" wx:key="*this" src="{{util.size(item)}}"/>
+            
+          </view>
+          <text class="bjtitle">{{item.title}}</text> 
+          <view class="bjcontent">{{item.content}}</view>
+          <view class="control">
+              <image src="../../assets/img/heart.png"></image>
+              <text>{{item.adminre_num}}34</text>
+              <image src="../../assets/img/message.png"></image>
+              <text>{{item.count}}</text>
+              <image src="../../assets/img/star.png"></image>
+              <text>{{item.collect_num}}22</text>
+          </view>
+        </navigator>
+  </view>
+
+  <wxs module="util">
+</wxs>
+
+
+  <!-- 广场 -->
+  <view wx:if='{{name==="squares"}}'>
+      <navigator class='modufocuse childer' wx:for='{{squares}}' wx:for-item='item'  url="../focuse/focuse">
+          <image  class="pic" src='{{item.avatarimage}}'  mode="aspectFill"></image>
+          <text class="name">{{item.nickname}}</text> 
+          <text class="time">{{item.create_time}}</text> 
+          <view class="images">
+            <image wx:for="{{item.coverimages}}" wx:key="*this" src="{{util.size(item)}}"/>
+          </view>
+          <text class="bjtitle">{{item.title}}</text> 
+          <view class="bjcontent">{{item.content}}</view>
+          <view class="control">
+              <image src="../../assets/img/heart.png"></image>
+              <text>{{item.adminre_num}}34</text>
+              <image src="../../assets/img/message.png"></image>
+              <text>{{item.count}}56</text>
+              <image src="../../assets/img/star.png"></image>
+              <text>{{item.collect_num}}22</text>
+          </view>
+        </navigator>
+  </view>
+
+  <!-- 活动 -->
+  <view wx:if='{{name==="activ"}}'>
+    <view class="activ">
+      <view class="location">
+        <image src="../../assets/img/location1.png"></image>
+        <text>{{city}}</text>
+      </view>
+      <!-- url="../activdetail/activdetail" -->
+      <view class="content" wx:for='{{active}}' wx:for-item='item' >
+        <image class="bg" src="{{item.activity_image}}" mode="aspectFill" data-id="{{item.id}}" bindtap='click_detail'></image>
+        <view>{{item.activity_title}}</view>
+        <view class="activtime">{{item.start_time}}  至  {{item.end_time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

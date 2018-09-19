@@ -1,0 +1,9 @@
+
+<import src="../../../components/private/private.wxml"/>
+<view class="bg">
+  <view class="focusAll">
+    <view wx:for='{{focusman}}' wx:for-item='item'>
+      <template is="onetext" data='{{...item}}' /> 
+    </view>
+  </view>
+</view>

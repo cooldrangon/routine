@@ -1,0 +1,15 @@
+<view class='all'>
+  <view class='banner'>
+    <view>
+      <text>标题:</text>
+      <input placeholder-class="place-holder"  placeholder='请为你的分类添加一个标题'></input>
+    </view>
+    <view class='synopsis'>
+      <text>简介:</text>
+      <textarea></textarea>
+    </view>
+  </view>
+</view>
+ <view class='confirm'>
+    确定
+  </view>

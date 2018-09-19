@@ -1,0 +1,33 @@
+<!-- <view class='focus'>
+    <view class='next' bindtap='nextgo'>跳过</view>
+    <view class='title'>值得关注的用户</view>
+    <view class='lists'>
+      <view class='childer' wx:for='{{focusman}}' wx:for-item='item'>
+        <image src='{{item.logsrc}}'  mode="aspectFill"></image>
+        <text>{{item.name}}</text> 
+        <text class="userintro">{{item.detail}}</text>
+        <!-- <text>{{item.name}} \n{{item.detail}}</text> -->
+        <!-- <text class='focuss' bindtap='clickfocus' data-item='{{item}}'>关注</text>
+      </view>
+    </view>
+    <view class='footers'>
+      <text bindtap='nextgo'>完成，进入首页</text>
+    </view>
+</view> -->
+
+<view class='focus'>
+    <view class='next' bindtap='nextgo'>跳过</view>
+    <view class='title'>值得关注的用户</view>
+    <view class='lists'>
+      <view class='childer' wx:for='{{list}}' wx:for-item='item'>
+        <image src='{{item.avatarimage}}'  mode="aspectFill"></image>
+        <text>{{item.nickname}}</text> 
+        <!-- <text>{{item.detail}}</text> -->
+        <!-- <text>{{item.name}} \n{{item.detail}}</text> -->
+        <text class='focuss' bindtap='clickfocus' data-item='{{item}}'>关注</text>
+      </view>
+    </view>
+    <view class='footers'>
+      <text bindtap='nextgo'>完成，进入首页</text>
+    </view>
+</view>

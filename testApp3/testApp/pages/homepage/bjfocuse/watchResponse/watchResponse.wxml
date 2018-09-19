@@ -1,0 +1,36 @@
+ <!-- 笔记回复 -->
+<view class="allResponse">
+   <view class='history' wx:for='{{tabj}}' wx:for-item='item'>
+    <image class="xiaotu" src='{{item.logsrc}}'  mode="aspectFill"></image>
+    <text class="na">{{item.name}}</text>
+    <view class="reason">小程序的屏幕宽固定为，在所有设备上都是如此，其中为手机屏幕的实际的宽度，例如的，则在由上可知，在不同设备上转换是不相同的，但是宽度的却是固定的，所以可以使用作为单位，来设置布局的</view>
+    <view class="time">
+        <text class="timea">{{item.time}}</text>
+        <text class='response' decode="{{true}}">回复&emsp;</text>
+        <image src="../../../../assets/img/heart.png"></image>
+        <text decode="{{true}}">&ensp;{{item.cishu}}51</text>
+    </view>
+    <view class="more">
+        <text>用户名：平板支撑没有太大效果</text>
+        <view hidden="{{!selectedFlag}}" bindtap='watchResponse'>共{}条回复 ></view>
+        <!-- 展开回复 -->
+        <view hidden="{{selectedFlag}}" class="zhankai">
+          <text>07-14  18:09</text> 
+          <text style="float:right">回复\n</text> 
+          <view>用户名：平板支撑没有太大效果</view>
+          <text>07-14  18:09</text> 
+          <text style="float:right">回复\n</text> 
+          <view class="shouqi" bindtap='watchResponse' style="text-align:center">收起回复 v</view>
+        </view>
+    </view>
+  </view>
+</view>
+ 
+
+<!-- 发送盒子 -->
+<view class="send">
+  <view class="sendContent">
+    <input />
+    <view class="anniu" bindtap="sendAnNiu">发送 </view>
+  </view>
+</view>

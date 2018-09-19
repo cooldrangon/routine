@@ -1,0 +1,57 @@
+<!-- 图- 文- 文 -->
+<template name="private" >
+    <view class="likeContent">
+      <view class="one">
+        <image src="{{logsrc}}" class="head" mode="aspectFill"></image>
+        <text class="cc">
+          <text class="ctop">{{name}}收藏了你的笔记\n</text>
+          <text class="cbottom">{{detail}}</text>
+        </text>
+        <text class="tim">{{detail}}</text>
+        <!-- <image src="{{logsrc}}" class="pic" mode="aspectFill"></image> -->
+      </view>
+    </view>
+</template>
+
+<!-- 图- 文- 图 -->
+<template name="newstemplate" >
+    <view class="likeContent">
+      <view class="one">
+        <image src="{{logsrc}}" class="head" mode="aspectFill"></image>
+        <text class="cc">
+          <text class="ctop">{{name}}收藏了你的笔记\n</text>
+          <text class="cbottom">{{detail}}</text>
+        </text>
+        <image src="{{logsrc}}" class="pic" mode="aspectFill"></image>
+      </view>
+    </view>
+</template>
+  
+
+<!-- 图- 文- 按钮 -->
+<template name="inform" >
+    <view class="likeContent">
+      <view class="one">
+        <image src="{{logsrc}}" class="head" mode="aspectFill"></image>
+        <text class="cc">
+          <text class="ctop">{{name}}想要与你建立关联\n</text>
+          <text class="cbottom">{{detail}}</text>
+        </text>
+        <text   bindtap="approve" data-index="{{index}}" class="answer {{state?'':'active'}}">同意</text>
+      </view>
+    </view>
+</template>
+
+<!-- 图- 文（一行文本） -按钮 -->
+<template name="onetext" >
+    <view class="childer">
+      <image src='{{logsrc}}'  mode="aspectFill"></image>
+      <text class="who">{{name}}关注了你</text> 
+      <text data-index='{{index}}' catchtap="gainText">
+        <!-- 关注样式 -->
+        <text wx:if="{{state}}" class='focus'>{{focus}}</text>
+        <!-- 已关注样式 -->
+        <text wx:else  class='focused'>{{focus}}</text>
+      </text>
+    </view>
+</template>
